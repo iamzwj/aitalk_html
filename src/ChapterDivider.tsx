@@ -1,15 +1,15 @@
 import GlitchText from './GlitchText';
 
 const chapters=[
-  {label:'PART 01 / PRODUCT',title:'D-Gen 蝶发AI工作台介绍',subtitle:'从一个生图工具，到团队 AI 工作平台'},
-  {label:'PART 02 / VIBE CODING',title:'不懂代码，也能开发工具？',subtitle:'从视觉设计师到AIGC产品设计，带你认识Vibe Coding'},
-  {label:'PART 03 / FROM CODE TO LAUNCH',title:'AI 写好了代码，然后呢？',subtitle:'AI工具从开发到上线全流程'}
+  {label:'PART 01 / PRODUCT',title:'D-Gen 蝶发AI工作台介绍',lines:['D-Gen','蝶发AI工作台介绍'],subtitle:'从一个生图工具，到团队 AI 工作平台'},
+  {label:'PART 02 / VIBE CODING',title:'不懂代码，也能开发工具？',lines:['不懂代码，','也能开发工具？'],subtitle:'从视觉设计师到AIGC产品设计，带你认识Vibe Coding'},
+  {label:'PART 03 / FROM CODE TO LAUNCH',title:'AI 写好了代码，然后呢？',lines:['AI 写好了代码，','然后呢？'],subtitle:'AI工具从开发到上线全流程'}
 ];
 export function ChapterDivider({chapter}:{chapter:number}){
   const item=chapters[chapter-1];
   return <div className="hero-content chapter-divider">
     <p className="divider-label">{item.label}</p>
-    <h1 className="main-title" aria-label={item.title}><GlitchText mode="slices" trigger="click" interval={3000} speed={1} intensity={0.5} burstDuration={0.35} offset={7} shadowColors={['#ff0000','#00ffff']}>{item.title}</GlitchText></h1>
+    <h1 className="main-title" aria-label={item.title}><GlitchText mode="slices" trigger="click" interval={3000} speed={1} intensity={0.5} burstDuration={0.35} offset={7} shadowColors={['#ff0000','#00ffff']}><span className="divider-title-line">{item.lines[0]}</span><span className="divider-title-line divider-title-accent">{item.lines[1]}</span></GlitchText></h1>
     <p className="divider-subtitle">{item.subtitle}</p>
   </div>;
 }
