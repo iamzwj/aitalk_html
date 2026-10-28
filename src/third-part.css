@@ -1,0 +1,144 @@
+/* Third chapter: five concepts become nine focused explanations. */
+.n-slide{--n-gap:clamp(10px,1.5vh,20px);--n-pad:clamp(12px,1.85vh,24px)}
+.n-body{display:grid;gap:var(--n-gap);min-width:0;min-height:0}
+.n-body p,.n-body h2,.n-body h3{margin:0}
+.n-panel{display:flex;flex-direction:column;gap:clamp(7px,1vh,14px);min-width:0;min-height:0;padding:var(--n-pad);background:var(--lesson-plate);border:1px solid var(--lesson-line)}
+.n-panel-accent{background:var(--lesson-raised);border-top:2px solid var(--lesson-accent)}
+.n-body strong{font-weight:500;color:#f1edf9}
+.n-section-heading{display:flex;align-items:center;gap:12px}
+.n-section-heading>svg{flex-shrink:0;color:var(--lesson-accent)}
+.n-intro{display:flex;flex-direction:column;gap:6px}
+.n-list{display:grid;align-content:start;list-style:none;padding:0;margin:0;gap:clamp(4px,.65vh,9px)}
+.n-list li{position:relative;padding-left:16px}
+.n-list li::before{content:'';position:absolute;left:0;top:.65em;width:4px;height:4px;background:var(--lesson-accent)}
+.n-index,.n-label{font-size:var(--type-label);line-height:1.4;color:var(--lesson-accent)}
+.n-index{font-family:var(--dp-typography-mono)}
+.presentation .content-page .n-slide p,.presentation .content-page .n-slide li{line-height:1.45}
+.presentation .content-page .n-slide p.n-note{font-size:var(--type-note);line-height:1.5;color:#b3adbf}
+.n-equal-panels{display:grid;grid-template-columns:1fr 1fr;gap:var(--n-gap);min-height:0;min-width:0}
+.n-flow{display:flex;align-items:center;gap:clamp(8px,1vw,18px);min-width:0}
+.n-flow-cell{display:flex;align-items:center;gap:clamp(8px,1vw,18px);font-size:var(--type-body);line-height:1.45;min-width:0}
+.n-flow-cell>b{font-weight:400;color:var(--lesson-accent)}
+/* P08: questions, concepts, explanations read across each aligned row. */
+.n-overview{grid-template-rows:auto minmax(0,1fr)}
+.n-concepts{display:grid;grid-template-rows:repeat(5,1fr);min-height:0}
+.n-concept{display:grid;grid-template-columns:40px 22% 26% 1fr;gap:clamp(12px,1.4vw,27px);align-items:center;border-top:1px solid var(--lesson-line);min-height:0;padding:clamp(6px,.8vh,11px) clamp(10px,1.3vw,25px)}
+.n-concept:last-child{border-bottom:1px solid var(--lesson-line)}
+.n-concept:nth-child(odd){background:var(--lesson-plate)}
+.n-question{font-size:var(--type-subsection);line-height:1.4;color:#c4bed0}
+.n-concept h2{display:flex;align-items:center;gap:14px;color:var(--lesson-accent)}
+.n-concept h2 svg{flex-shrink:0}
+/* P09: what the repository does vs what the three commands do. */
+.n-github{grid-template-rows:auto minmax(0,1fr)}
+.n-github-columns{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--n-gap);min-height:0}
+.n-core-roles,.n-commands{display:grid;grid-template-rows:repeat(3,1fr);gap:clamp(8px,1.5vh,20px);min-height:0;flex:1}
+.n-core-roles>div{display:grid;grid-template-columns:clamp(120px,10vw,190px) 1fr;align-items:center;gap:16px;border-top:1px solid var(--lesson-line);padding-top:10px}
+.n-commands>div{display:grid;grid-template-columns:clamp(100px,9vw,170px) 1fr;gap:12px;align-items:center;border-top:1px solid var(--lesson-line);padding-top:10px}
+.n-commands h3{font-family:var(--dp-typography-mono);color:var(--lesson-accent)}
+/* P10: responsibilities are a distinct column from the tool catalogue. */
+.n-vibe{grid-template-columns:1.1fr 1fr;grid-template-rows:auto minmax(0,1fr)}
+.n-vibe-intro{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:clamp(18px,2vw,38px)}
+.n-vibe-intro h3{flex-shrink:0;color:var(--lesson-accent)}
+.n-responsibilities{display:grid;grid-template-rows:.9fr 1.1fr;gap:var(--n-gap);min-height:0}
+.n-role{display:grid;grid-template-columns:clamp(100px,9vw,160px) 1fr;align-content:center;align-items:start;gap:12px}
+.n-role h2{color:var(--lesson-accent)}
+.n-tools{display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(8px,1vh,14px);min-height:0}
+.n-tool-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(8px,1vh,14px);min-height:0}
+.n-tool-grid .n-panel{justify-content:center}
+.n-tool-grid h3{color:var(--lesson-accent)}
+/* P11: equal front/back panels, followed by one shared example. */
+.n-frontend{grid-template-rows:minmax(0,1fr) auto}
+.n-frontend .n-list{margin-top:clamp(6px,1vh,14px)}
+.n-frontend .n-equal-panels .n-panel{justify-content:center}
+.n-example{display:grid;grid-template-columns:clamp(240px,22vw,420px) 1fr;gap:var(--n-gap);align-items:center;padding:clamp(10px,1.4vh,20px) 0;border-top:1px solid var(--lesson-line)}
+.n-example h3{color:var(--lesson-accent)}
+/* P12: first explain local/cloud, then show the preparation sequence. */
+.n-server{grid-template-rows:auto minmax(0,.8fr) auto minmax(0,1fr)}
+.n-computers .n-panel{display:grid;grid-template-columns:40px 1fr;align-items:center;gap:16px}
+.n-computers svg{color:var(--lesson-accent)}
+.n-computers h2{margin-bottom:6px}
+.n-preparations{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--n-gap);list-style:none;padding:0;margin:0;min-height:0}
+.n-preparations>li{background:var(--lesson-plate);border-top:2px solid var(--lesson-accent);padding:var(--n-pad);display:flex;flex-direction:column;justify-content:center;gap:clamp(5px,.7vh,10px);min-width:0;min-height:0}
+/* P13: address and subdomains on the left; filing rules on the right. */
+.n-domain{grid-template-columns:1.2fr 1fr}
+.n-domain-left{display:grid;grid-template-rows:auto minmax(0,1fr);gap:var(--n-gap);min-height:0}
+.n-address{display:flex;flex-direction:column;gap:6px}
+.n-address>div{display:flex;align-items:baseline;gap:16px}
+.n-address>div>strong{font:500 var(--type-section)/1.35 var(--dp-typography-mono);color:var(--lesson-accent)}
+.n-subdomains{gap:clamp(6px,.8vh,12px)}
+.n-domain-rows{display:grid;grid-template-rows:repeat(4,1fr);gap:4px;min-height:0;flex:1}
+.n-domain-rows>div{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--lesson-line);padding:clamp(4px,.65vh,9px) 0}
+.n-domain-rows code{font:400 var(--type-body)/1.4 var(--dp-typography-mono)}
+.n-domain-rows code strong{color:var(--lesson-accent)}
+.n-domain-rows>div>span{font-size:var(--type-label);color:#b5aec5}
+.n-icp{gap:clamp(12px,1.7vh,24px)}
+.n-icp-rules{display:grid;grid-template-rows:1fr 1fr;gap:clamp(12px,1.7vh,24px);flex:1;align-content:center}
+.n-icp-condition{display:grid;grid-template-columns:clamp(90px,9vw,170px) 1fr;gap:16px;align-items:center;border-top:1px solid var(--lesson-line);padding-top:clamp(10px,1.5vh,21px)}
+/* P14: two aligned before/after pipelines above the why and how. */
+.n-deployment{grid-template-rows:auto auto minmax(0,1fr)}
+.n-pipeline{display:grid;grid-template-columns:clamp(230px,23vw,420px) 1fr;align-items:center;padding:clamp(10px,1.4vh,20px) var(--n-pad);gap:var(--n-gap);border:1px solid var(--lesson-line);background:var(--lesson-plate)}
+.n-pipeline .n-flow{justify-content:space-between}
+.n-pipeline-after{background:var(--lesson-raised);border-left:3px solid var(--lesson-accent)}
+.n-pipeline-after h3{color:var(--lesson-accent)}
+.n-deployment-notes{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--n-gap);min-height:0}
+.n-deployment-notes .n-list{gap:clamp(4px,.7vh,10px)}
+/* P15: definition, an explicit request/response path, then connection choices. */
+.n-api{grid-template-rows:auto auto minmax(0,1fr)}
+.n-api-process{display:grid;grid-template-columns:clamp(120px,12vw,220px) 1fr;align-items:center;gap:var(--n-gap);border-top:1px solid var(--lesson-line);border-bottom:1px solid var(--lesson-line);padding:clamp(8px,1.3vh,18px) 0}
+.n-api-process .n-flow{justify-content:space-between}
+.n-api-details{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--n-gap);min-height:0}
+.n-api-methods{display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(8px,1vh,14px);min-height:0}
+.n-api-methods .n-panel{justify-content:center}
+.n-api-methods .n-panel h3,.n-api-key h3{color:var(--lesson-accent)}
+.n-api-key{justify-content:center}
+/* P16: prerequisites and hosted benefits stay side-by-side, with their routes. */
+.n-cloudflare{grid-template-rows:minmax(0,1fr) auto}
+.n-route-columns{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--n-gap);min-height:0}
+.n-route-columns .n-list{flex:1}
+.n-route-columns .n-panel{gap:clamp(6px,.85vh,12px)}
+.n-route-columns h2{color:var(--lesson-accent)}
+.n-route-path{display:flex;flex-direction:column;gap:6px;padding-top:clamp(9px,1.2vh,17px);border-top:1px solid var(--lesson-line);margin-top:auto}
+.n-route-path .n-flow-cell{font-size:var(--type-label)}
+.n-scope{display:grid;grid-template-columns:auto 1fr;gap:16px;padding-top:clamp(8px,1.1vh,16px);border-top:1px solid var(--lesson-line)}
+.presentation .content-page .n-slide .n-scope p{font-size:var(--type-note);line-height:1.5;color:#bbb4ca}
+@media(max-height:760px){
+  .n-slide{--n-gap:9px;--n-pad:10px}
+  .presentation .content-page .n-slide p,.presentation .content-page .n-slide li{line-height:1.4}
+  .n-concept{grid-template-columns:26px 23% 25% 1fr;gap:12px;padding:4px 10px}
+  .n-concept h2{gap:8px}.n-concept svg{width:21px;height:21px}
+  .n-github-columns{grid-template-columns:1.35fr 1fr}
+  .n-core-roles>div,.n-commands>div{padding-top:5px;gap:10px}
+  .n-core-roles,.n-commands{gap:5px}
+  .n-vibe-intro{gap:18px}.n-vibe-intro h3{font-size:var(--type-subsection)}
+  .n-role{grid-template-columns:88px 1fr;padding:8px 10px}
+  .n-role .n-list{gap:2px}
+  .n-tool-grid .n-panel{padding:8px 10px;gap:4px}
+  .n-example{padding:7px 0}
+  .n-server{grid-template-rows:auto minmax(0,.85fr) auto minmax(0,1fr);gap:8px}
+  .n-computers .n-panel{grid-template-columns:30px 1fr;gap:10px}
+  .n-computers svg{width:27px;height:27px}
+  .n-preparations>li{padding:8px 10px;gap:4px}
+  .n-domain{grid-template-columns:1.25fr 1fr}
+  .n-domain-rows>div{padding:3px 0}
+  .n-address,.n-subdomains{gap:4px}
+  .n-icp{gap:9px}.n-icp-rules{gap:9px}.n-icp-condition{padding-top:8px;gap:10px}
+  .n-pipeline{padding:8px 10px;grid-template-columns:230px 1fr}
+  .n-deployment-notes .n-panel{gap:5px}
+  .n-deployment-notes .n-list{gap:2px}
+  .n-api .n-intro{gap:3px}
+  .n-api-process{padding:6px 0;grid-template-columns:115px 1fr}
+  .n-api-methods .n-panel,.n-api-key{padding:8px 10px;gap:4px}
+  .n-route-columns .n-panel{padding:8px 10px;gap:4px}
+  .n-route-columns .n-list{gap:2px}
+  .n-route-path{padding-top:7px;gap:3px}
+  .n-route-path .n-flow{gap:6px}.n-route-path .n-flow-cell{gap:6px}
+  .n-scope{padding-top:6px;gap:10px}
+}
+
+/* Equal columns make the two timelines genuinely comparable. */
+.n-pipeline .n-flow,.n-api-process .n-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.n-pipeline .n-flow-cell,.n-api-process .n-flow-cell{position:relative;justify-content:center;text-align:center;gap:0;padding:0 12px}
+.n-pipeline .n-flow-cell>b,.n-api-process .n-flow-cell>b{position:absolute;left:0;transform:translateX(-50%)}
+.n-deployment-notes .n-panel{justify-content:center}
+.n-role h2{white-space:nowrap}
+@media(max-height:760px){.n-role{grid-template-columns:112px 1fr}}
