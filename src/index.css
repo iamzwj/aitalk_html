@@ -351,3 +351,5 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 .evo-description{font-size:clamp(16px,2.2vh,30px);line-height:1.4;color:#b0c5b8;margin:clamp(8px,1.2vh,16px) 0 0}
 .evo-platform .evo-description{margin-bottom:auto}
 @media(max-height:760px){.presentation .evo-evidence h2,.presentation .evo-platform h2{font-size:28px}.evo-description{font-size:16px}}
+
+.hero-content .presenter{color:var(--dp-color-accent)}
