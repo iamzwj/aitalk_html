@@ -324,3 +324,11 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 
 /* One shared size for all sixteen page titles, including the cover. */
 .presentation .main-title,.presentation .r-heading h1.main-title{font-size:clamp(30px,min(3vw,5.4vh),72px);line-height:1.18;font-weight:600;letter-spacing:-.04em}
+
+/* Keep the shared mouse-scrub background visible on every page. */
+.background-poster{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;filter:grayscale(1) contrast(1.15);opacity:.48;pointer-events:none}
+.presentation .content-wash{background:linear-gradient(90deg,#020303ed 0%,#020303df 48%,#020303b8 100%)}
+/* Give the presentation body more air above and below. */
+.presentation .content-page{padding-top:clamp(135px,14.6vh,195px);padding-bottom:clamp(142px,14.9vh,202px)}
+
+.background-poster.loaded{opacity:0}
