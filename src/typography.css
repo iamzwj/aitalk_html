@@ -1,0 +1,102 @@
+/* Presentation typography. Content roles share one scale across every chapter.
+   Cover and closing display sizes intentionally remain in index.css. */
+.presentation{
+  --type-title:clamp(34px,min(3vw,5.4vh),64px);
+  --type-section:clamp(22px,min(1.875vw,3.333vh),40px);
+  --type-subsection:clamp(18px,min(1.46vw,2.6vh),30px);
+  --type-body:clamp(15px,min(1.15vw,2.05vh),24px);
+  --type-lead:clamp(17px,min(1.46vw,2.6vh),30px);
+  --type-label:clamp(13px,min(.94vw,1.67vh),20px);
+  --type-note:clamp(12px,min(.84vw,1.5vh),18px);
+  --type-product:clamp(28px,min(2.1vw,3.75vh),44px);
+}
+/* Primary and secondary headings. Never use oversized card titles as page titles. */
+.presentation .content-page .r-heading h1.main-title{font-size:var(--type-title);line-height:1.18;font-weight:600}
+.presentation .content-page .redesigned-slide h2{font-size:var(--type-section);line-height:1.3;font-weight:500}
+.presentation .content-page .redesigned-slide h3{font-size:var(--type-subsection);line-height:1.35;font-weight:500}
+.presentation .content-page .redesigned-slide p,
+.presentation .content-page .redesigned-slide li{font-size:var(--type-body);line-height:1.55}
+.presentation .content-page .r-heading>p{font-size:var(--type-body);line-height:1.5}
+/* Navigation context and supplementary notes form distinct quieter levels. */
+.presentation .content-page .r-chapter{font-size:var(--type-label);line-height:1.4}
+.presentation .content-page .r-conclusion>span,
+.presentation .content-page .capability-number,
+.presentation .content-page .evo-caption,
+.presentation .content-page .evo-group-label,
+.presentation .content-page .evo-limitation>span,
+.presentation .content-page .co-build-arrow,
+.presentation .content-page .co-assist-arrow,
+.presentation .content-page .two-moment,
+.presentation .content-page .two-example-label,
+.presentation .content-page .two-experience-link,
+.presentation .content-page .two-autonomy-arrow,
+.presentation .content-page .two-questions>div>span,
+.presentation .content-page .setup-title,
+.presentation .content-page .two-way,
+.presentation .content-page .restaurant>span,
+.presentation .content-page .route-name>span,
+.presentation .content-page .lesson-steps>li>span,
+.presentation .content-page .deployment-pipeline>section>span{font-size:var(--type-label);line-height:1.5}
+.presentation .content-page .lesson-muted,
+.presentation .content-page .co-return p,
+.presentation .content-page .co-outputs p,
+.presentation .content-page .evo-cobuild p,
+.presentation .content-page .two-role span,
+.presentation .content-page .two-questions small,
+.presentation .content-page .sync-diagram small,
+.presentation .content-page .route-benefits span,
+.presentation .content-page .api-return{font-size:var(--type-note);line-height:1.5}
+/* Text inside diagrams and tables uses the same body scale as prose. */
+.presentation .content-page .evo-functions,
+.presentation .content-page .evo-libs,
+.presentation .content-page .two-coze-grid>div,
+.presentation .content-page .two-compare-row,
+.presentation .content-page .lesson-compare-row,
+.presentation .content-page .lesson-tags span,
+.presentation .content-page .domain-branches>div,
+.presentation .content-page .git-terms span,
+.presentation .content-page .tools-table-row,
+.presentation .content-page .deployment-gains,
+.presentation .content-page .two-role strong{font-size:var(--type-body);line-height:1.5}
+/* Comparison headers / process names sit between prose and section headings. */
+.presentation .content-page .two-compare-head>span,
+.presentation .content-page .two-compare-head>strong,
+.presentation .content-page .tools-table-head,
+.presentation .content-page .sync-diagram strong,
+.presentation .content-page .git-terms strong,
+.presentation .content-page .restaurant strong,
+.presentation .content-page .evo-limitation strong,
+.presentation .content-page .api-definitions strong{font-size:var(--type-subsection);font-weight:500;line-height:1.4}
+/* The original/new product names are the focus of the evolution slide. */
+.presentation .content-page .evo-evidence h2,
+.presentation .content-page .evo-platform h2{font-size:var(--type-product);line-height:1.2}
+.presentation .content-page .evo-stats strong{font-size:var(--type-title);line-height:1.1}
+.presentation .content-page .evo-stats span{font-size:var(--type-label);line-height:1.4}
+.presentation .content-page .evo-transition{font-size:var(--type-label)}
+/* Deliberate emphasis is reserved for the key distinction and example. */
+.presentation .content-page .two-compare-row:nth-child(2){font-size:var(--type-subsection);font-weight:500}
+.presentation .content-page .two-example blockquote{font-size:var(--type-section);line-height:1.5}
+.presentation .content-page .lesson-bigline,
+.presentation .content-page .filing-main{font-size:var(--type-subsection);line-height:1.5}
+.presentation .content-page .domain-root{font-size:var(--type-section);line-height:1.4}
+
+.presentation .content-page .co-libraries strong{font-size:var(--type-label);line-height:1.5;font-weight:400}
+/* Preserve the reading size on compact desktop screens by tightening only
+   the affected cards' internal spacing, rather than shrinking their text. */
+@media(max-height:760px){
+  .presentation .evo-platform{padding-top:14px;padding-bottom:14px}
+  .presentation .evo-domain{margin-top:10px}
+  .presentation .two-questions{padding-top:14px;padding-bottom:14px}
+  .presentation .server-layout{grid-template-rows:.7fr auto 1.3fr}
+  .presentation .lesson-steps>li{padding-top:10px;padding-bottom:10px}
+  .presentation .lesson-steps>li>span{margin-bottom:6px}
+  .presentation .lesson-steps h3{margin-bottom:6px}
+  .presentation .domain-layout .lesson-box-title{margin-bottom:12px}
+  .presentation .domain-layout .domain-root{padding-top:8px;padding-bottom:8px}
+  .presentation .domain-layout .domain-branches{padding-top:10px;padding-bottom:10px}
+  .presentation .api-options{gap:4px}
+  .presentation .api-options>section{padding-top:7px;padding-bottom:7px}
+  .presentation .api-options h3{margin-bottom:4px}
+}
+.presentation .content-page .api-or,
+.presentation .content-page .server-contrast>span{font-size:var(--type-note);line-height:1.5}

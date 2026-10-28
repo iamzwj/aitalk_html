@@ -5,6 +5,7 @@ import GlitchText from './GlitchText';
 import React, {useEffect, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import './index.css';
+import './typography.css';
 import {PartOne} from './PartOne';
 import {PartTwo} from './PartTwo';
 import {Remaining} from './Remaining';

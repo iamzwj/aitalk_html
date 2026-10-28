@@ -49,3 +49,7 @@ npm run dev
 工作流所需仓库 Secrets：`SERVER_SSH_PRIVATE_KEY`、`SERVER_SSH_KNOWN_HOSTS`。不将密钥写入仓库。Nginx 配置模板在 `deploy/aitalk.nginx.conf`，HTTPS 证书由服务器的 Certbot 管理。可通过 `/version.json` 核对线上 commit。
 
 本地原稿、历史版本、预览图片和交付 ZIP 不纳入 Git 仓库。
+
+## 字号层级
+
+内容页使用 `src/typography.css` 中的统一字号变量；各档用途与电脑尺寸对照见 [字号规范.md](字号规范.md)。封面与封底维持独立展示字号。
