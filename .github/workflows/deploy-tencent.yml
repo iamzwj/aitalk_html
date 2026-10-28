@@ -1,0 +1,78 @@
+name: Deploy AI Talk to Tencent Cloud
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aitalk-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      SERVER_HOST: 49.235.121.231
+      SERVER_USER: ubuntu
+      SITE_URL: https://aitalk.17design.fun
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+          printf '{"revision":"%s"}\n' "$GITHUB_SHA" > dist/version.json
+          tar -czf "aitalk-$GITHUB_SHA.tar.gz" -C dist .
+      - name: Configure trusted SSH connection
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SERVER_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_PRIVATE_KEY"
+          test -n "$SSH_KNOWN_HOSTS"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Upload and publish an isolated release
+        run: |
+          set -euo pipefail
+          scp -o BatchMode=yes "aitalk-$GITHUB_SHA.tar.gz" "$SERVER_USER@$SERVER_HOST:/tmp/aitalk-$GITHUB_SHA.tar.gz"
+          ssh -o BatchMode=yes "$SERVER_USER@$SERVER_HOST" bash -s -- "$GITHUB_SHA" <<'REMOTE'
+            set -euo pipefail
+            revision="$1"
+            [[ "$revision" =~ ^[a-f0-9]{40}$ ]]
+            exec 9>/tmp/aitalk-deploy.lock
+            flock -x 9
+            release="/var/www/aitalk/releases/$revision"
+            sudo mkdir -p "$release" /var/www/aitalk/assets
+            sudo tar -xzf "/tmp/aitalk-$revision.tar.gz" -C "$release" --no-same-owner
+            test -s "$release/index.html"
+            # Retain hashed assets so clients opening an older page still work.
+            sudo cp -an "$release/assets/." /var/www/aitalk/assets/
+            sudo chmod -R a+rX "$release" /var/www/aitalk/assets
+            sudo ln -sfn "$release" /var/www/aitalk/current.next
+            sudo mv -Tf /var/www/aitalk/current.next /var/www/aitalk/current
+            rm "/tmp/aitalk-$revision.tar.gz"
+            sudo nginx -t
+            curl --fail --silent --show-error --resolve aitalk.17design.fun:443:127.0.0.1 \
+              https://aitalk.17design.fun/version.json | python3 -c \
+              'import json,sys; assert json.load(sys.stdin)["revision"] == sys.argv[1]' "$revision"
+          REMOTE
+      - name: Verify public HTTPS release
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --retry 3 --retry-delay 3 \
+            --connect-timeout 10 --max-time 30 "$SITE_URL/version.json?revision=$GITHUB_SHA" \
+            | node -e 'let text="";process.stdin.on("data",x=>text+=x);process.stdin.on("end",()=>{if(JSON.parse(text).revision!==process.env.GITHUB_SHA)process.exit(1)})'
+          curl --fail --silent --show-error --connect-timeout 10 --max-time 30 "$SITE_URL/" >/dev/null

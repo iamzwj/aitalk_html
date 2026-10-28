@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+originals/
+preview/
+*.zip
+.env
+.env.*
+!.env.example
+/分享完整原稿.md
