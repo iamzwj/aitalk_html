@@ -7,7 +7,7 @@ function List({items}:{items:ReactNode[]}){return <ul className="n-list">{items.
 function Flow({items}:{items:string[]}){return <div className="n-flow">{items.map((item,i)=><span className="n-flow-cell" key={item}>{i>0&&<b aria-hidden="true">→</b>}<span>{item}</span></span>)}</div>}
 const topics=['五个基本概念','GitHub 代码云盘','AI 程序员与工具','前台与后台','远程电脑','网站专属网址','网站持续更新','连接 AI 模型','两条上线路线'];
 const preparations=[['购买服务器','选择云服务商和服务器配置。'],['操作系统','通常使用 Linux。'],['运行环境','根据项目安装 Node.js、Python 等。'],['部署程序','将开发好的工具运行起来。'],['配置访问','设置网络、安全及 HTTPS 等必要内容。']];
-const tools=[['ChatGPT / Codex','适合开发、修改和持续维护网页与软件项目。'],['Claude Code','专业 AI 编程工具，可用于复杂代码项目的开发与调试。'],['WorkBuddy','国内 AI 工作与开发工具，可以探索自然语言开发应用。'],['Coze','提供一站式开发环境，适合快速验证工具想法。']];
+const tools=[['Coze','提供一站式开发环境，适合快速验证工具想法。'],['ChatGPT / Codex','适合开发、修改和持续维护网页与软件项目。'],['Claude Code','专业 AI 编程工具，可用于复杂代码项目的开发与调试。'],['WorkBuddy','国内 AI 工作与开发工具，可以探索自然语言开发应用。']];
 
 export function Remaining({page}:{page:number}){return <section className={`redesigned-slide lesson-slide n-slide n-page-${page}`} aria-labelledby="slide-title">
 <div className="r-chapter"><span>第三部分：从开发到上线</span><b>{topics[page]}</b></div>
