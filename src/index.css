@@ -365,3 +365,10 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 .closing-qr-frame img{display:block;box-sizing:content-box;width:clamp(176px,20vh,220px);height:clamp(176px,20vh,220px);object-fit:contain;padding:12px;background:#fff}
 .closing-qr-row figcaption{font-size:clamp(18px,2.3vh,30px);line-height:1.4;color:var(--dp-color-accent);margin-top:16px;letter-spacing:.06em}
 .closing-page .backdrop,.closing-page .background-poster{-webkit-mask-image:linear-gradient(90deg,transparent,#000 24%);mask-image:linear-gradient(90deg,transparent,#000 24%)}
+/* Refine the closing slide hierarchy and use the cover's continuous backdrop. */
+.closing-page .closing-content .main-title{font-size:clamp(96px,9vw,184px);margin-bottom:clamp(28px,4.5vh,56px)}
+.closing-qr-frame img{width:clamp(156px,17vh,188px);height:clamp(156px,17vh,188px)}
+.closing-qr-frame{padding:8px}
+.closing-qr-row{gap:clamp(24px,2.2vw,42px)}
+.closing-page .backdrop,.closing-page .background-poster{left:0;width:100%;object-position:70% center;-webkit-mask-image:none;mask-image:none}
+.closing-page .wash{background:linear-gradient(90deg,#020303 0%,#020303f5 27%,#020303d9 43%,#02030385 60%,#02030324 100%)}
