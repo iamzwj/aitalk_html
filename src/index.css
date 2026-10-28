@@ -332,3 +332,11 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 .presentation .content-page{padding-top:clamp(135px,14.6vh,195px);padding-bottom:clamp(142px,14.9vh,202px)}
 
 .background-poster.loaded{opacity:0}
+/* Cover remains the large display title; inner pages share the title scale. */
+.presentation .hero-content .main-title{font-size:clamp(60px,5.55vw,116px);line-height:1.18}
+/* Stronger secondary headings within each page's content. */
+.presentation .redesigned-slide h2{font-size:clamp(26px,3.5vh,48px)}
+.presentation .six-equal h2{font-size:clamp(30px,4.3vh,58px)}
+.presentation .evo-platform h2{font-size:clamp(38px,5.8vh,80px)}
+.presentation .evo-evidence h2{font-size:clamp(24px,3.15vh,43px)}
+@media(max-height:760px){.presentation .redesigned-slide h2{font-size:24px}.presentation .six-equal h2{font-size:30px}.presentation .evo-platform h2{font-size:38px}.presentation .evo-evidence h2{font-size:24px}}
