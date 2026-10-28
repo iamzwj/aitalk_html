@@ -1,0 +1,51 @@
+/* P06: one platform supplies four connected capabilities. */
+.coze-story{display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(10px,1.5vh,20px);min-height:0}
+.coze-story>h3{margin:0;color:#c9d5df}
+.coze-map{--coze-gap:clamp(24px,2.8vw,54px);display:grid;grid-template-columns:1fr .6fr 1fr;grid-template-rows:1fr 1fr;column-gap:var(--coze-gap);row-gap:clamp(12px,1.8vh,24px);min-height:0}
+.coze-node{position:relative;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.5vh,20px);padding:clamp(14px,2.2vh,30px);min-width:0;min-height:0;background:#071016;border:1px solid #304450}
+.coze-node-title{display:flex;align-items:center;gap:clamp(8px,1vw,18px)}
+.coze-node-title>span{font:400 var(--type-label)/1.4 var(--dp-typography-mono);color:#88a4b7}
+.coze-node-title svg{flex-shrink:0;color:var(--dp-color-accent)}
+.coze-node h3{margin:0;color:#eaf4fb}
+.coze-node p{margin:0;color:#c3ced6}
+.coze-node-ai{grid-column:1;grid-row:1}.coze-node-code{grid-column:1;grid-row:2}
+.coze-node-cloud{grid-column:3;grid-row:1}.coze-node-url{grid-column:3;grid-row:2}
+.coze-node-ai::after,.coze-node-code::after,.coze-node-cloud::before,.coze-node-url::before{content:'';position:absolute;top:50%;width:var(--coze-gap);height:1px;background:#648da6}
+.coze-node-ai::after,.coze-node-code::after{left:100%}
+.coze-node-cloud::before,.coze-node-url::before{right:100%}
+.coze-hub{grid-column:2;grid-row:1/3;align-self:center;height:74%;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(140deg,#142937,#07121b);border:1px solid var(--dp-color-accent);box-shadow:inset 0 0 55px #8bcfff08}
+.coze-hub strong{font-size:var(--type-title);line-height:1.1;font-weight:600;color:var(--dp-color-accent);letter-spacing:-.04em}
+.coze-hub>span{font-size:var(--type-body);line-height:1.5;color:#d7e4ee;text-align:center}
+/* P07: personal bottlenecks lead to a new development setup, not an all-in-one Codex hosting claim. */
+.switch-story{display:grid;grid-template-columns:1.1fr 6% 1fr;min-height:0}
+.switch-side{display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(12px,1.8vh,24px);min-height:0;min-width:0}
+.switch-side>h2{margin:0}
+.switch-benefits>h2{color:var(--dp-color-accent)}
+.switch-limit-list{display:grid;grid-template-rows:1fr 1fr;gap:clamp(12px,1.8vh,24px);min-height:0}
+.switch-limit-list>section{display:grid;grid-template-columns:28px 1fr;gap:clamp(10px,1.2vw,22px);align-content:center;padding:clamp(14px,2vh,28px);border:1px solid #304450;background:#070d12;min-height:0}
+.switch-index{font:400 var(--type-label)/1.5 var(--dp-typography-mono);color:#8fa6b7;padding-top:5px}
+.switch-limit-list h3,.switch-benefit-list h3{margin:0 0 clamp(6px,.9vh,12px)}
+.switch-limit-list p,.switch-benefit-list p{margin:0;color:#becbd5}
+.switch-limit-list p+p{margin-top:clamp(5px,.9vh,12px)}
+.switch-arrow{display:flex;align-items:center;justify-content:center;color:var(--dp-color-accent)}
+.switch-benefit-list{display:grid;grid-template-rows:repeat(3,1fr);gap:clamp(10px,1.5vh,20px);min-height:0}
+.switch-benefit-list>section{display:grid;grid-template-columns:32px 1fr;column-gap:16px;align-content:center;padding:clamp(12px,1.8vh,24px);background:#0b1822;border-left:2px solid var(--dp-color-accent);min-height:0}
+.switch-benefit-list svg{color:var(--dp-color-accent);margin-top:4px}
+.presentation .content-page .switch-story p,.presentation .content-page .coze-map p{line-height:1.45}
+@media(max-height:760px){
+  .coze-map{--coze-gap:24px;row-gap:10px;grid-template-columns:1fr .55fr 1fr}
+  .coze-node{padding:10px 12px;gap:6px}
+  .coze-node-title{gap:8px}.coze-node-title svg{width:22px;height:22px}
+  .coze-hub{gap:10px}
+  .switch-side{gap:10px}
+  .switch-limit-list{gap:10px}
+  .switch-limit-list>section{padding:10px 12px;grid-template-columns:22px 1fr;gap:9px}
+  .switch-benefit-list{gap:8px}
+  .switch-benefit-list>section{padding:9px 10px;grid-template-columns:24px 1fr;column-gap:10px}
+  .switch-benefit-list svg{width:23px;height:23px}
+  .switch-limit-list h3,.switch-benefit-list h3{margin-bottom:5px}
+  .switch-limit-list p+p{margin-top:5px}
+}
+/* The closing slide now shares the third chapter's purple highlight. */
+.closing-page{--dp-color-accent:#baa6ff;--dp-color-line:#423a59;--dp-color-control-line:#8e82ad}
+.closing-page .closing-qr-frame{background:#100d18}
