@@ -382,3 +382,6 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 .divider-label{font:500 clamp(17px,1.3vw,25px)/1.4 var(--dp-typography-mono);color:var(--dp-color-accent);margin:0 0 clamp(24px,3.8vh,44px);letter-spacing:.04em}
 .presentation.divider-page .chapter-divider .main-title{font-size:clamp(48px,4.8vw,104px);line-height:1.18;letter-spacing:-.04em;color:var(--dp-color-accent);margin-bottom:clamp(24px,3.4vh,42px);text-transform:none;white-space:nowrap}
 .divider-subtitle{font-size:clamp(20px,1.65vw,32px);line-height:1.5;color:#d3dbd5;margin:0}
+/* Chapter dividers keep their alignment without the cover's vertical rule. */
+.divider-page .chapter-divider{border-left-color:transparent}
+.divider-page .chapter-divider::before,.divider-page .chapter-divider::after{display:none}
