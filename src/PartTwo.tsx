@@ -1,7 +1,7 @@
 import {Head,Icon} from './PartOne';
 const captions=['理解 Vibe Coding','Coze 一站式开发','从 Coze 到 Codex'];
 function Point({children}:{children:React.ReactNode}){return <div className="r-conclusion"><span>核心观点</span><p>{children}</p></div>}
-export function PartTwo({page}:{page:number}){return <section className={'redesigned-slide part-two-slide two-page-'+page} aria-labelledby="slide-title"><div className="r-chapter"><span>第二部分：我的 Vibe Coding 探索之路</span><b>{captions[page]}</b></div>
+export function PartTwo({page}:{page:number}){return <section className={'redesigned-slide part-two-slide two-page-'+page} aria-labelledby="slide-title"><div className="r-chapter"><span>第二部分：Vibe coding 探索</span><b>{captions[page]}</b></div>
 {page===0&&<><Head title={<>什么是 <em>Vibe Coding？</em></>} sub="通过自然语言与 AI 协作，完成软件或网页工具的开发、修改和调试。"/><div className="two-definition"><div className="two-compare"><div className="two-compare-head"><span>传统编程</span><strong>Vibe Coding</strong></div>{[['需要掌握编程语言','不必先掌握代码'],['自己编写代码','用自然语言描述需求'],['自己编写、修改程序','AI 生成、协助修改'],['人进行测试和验收','人仍需要测试和验收']].map(([a,b],i)=><div className={'two-compare-row '+(i===3?'human-check':'')} key={a}><span>{a}</span><span>{b}</span></div>)}</div><aside className="two-example"><div className="two-example-label"><Icon kind="text" size={25}/><span>一个简单的需求</span></div><blockquote>“帮我做一个 xxx 工具，要实现 xxx 功能，页面结构是 xxx 等等。”</blockquote><div className="two-role"><Icon kind="skill" size={28}/><p><strong>你想要什么，就跟 AI 说什么</strong><span>测试与验收，仍由人负责</span></p></div></aside></div><Point>代码可以让 AI 写，但需求判断、测试和验收仍由人负责。</Point></>}
 {page===1&&<>
 <Head title={<>我的第一站：<em>Coze，一站式开发平台</em></>} sub="AI 编程、代码管理、服务器、域名，平台已经帮你准备好了。"/>

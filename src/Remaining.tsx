@@ -10,7 +10,7 @@ const preparations=[['购买服务器','选择云服务商和服务器配置。'
 const tools=[['ChatGPT / Codex','适合开发、修改和持续维护网页与软件项目。'],['Claude Code','专业 AI 编程工具，可用于复杂代码项目的开发与调试。'],['WorkBuddy','国内 AI 工作与开发工具，可以探索自然语言开发应用。'],['Coze','提供一站式开发环境，适合快速验证工具想法。']];
 
 export function Remaining({page}:{page:number}){return <section className={`redesigned-slide lesson-slide n-slide n-page-${page}`} aria-labelledby="slide-title">
-<div className="r-chapter"><span>第三部分：Vibe Coding 从开发到上线</span><b>{topics[page]}</b></div>
+<div className="r-chapter"><span>第三部分：从开发到上线</span><b>{topics[page]}</b></div>
 {page===0&&<>
   <Head title={<>从开发到上线，<em>需要准备什么？</em></>} sub="从代码开发到正式上线，需要了解的几个基本概念。"/>
   <div className="n-body n-overview">
