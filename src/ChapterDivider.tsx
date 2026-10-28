@@ -1,7 +1,7 @@
 import GlitchText from './GlitchText';
 
 const chapters=[
-  {label:'PART 01 / PRODUCT',title:'蝶发AI工作台',subtitle:'从一个生图工具，到团队 AI 工作平台'},
+  {label:'PART 01 / PRODUCT',title:'D-Gen 蝶发AI工作台介绍',subtitle:'从一个生图工具，到团队 AI 工作平台'},
   {label:'PART 02 / VIBE CODING',title:'不懂代码，也能开发工具？',subtitle:'从视觉设计师到AIGC产品设计，带你认识Vibe Coding'},
   {label:'PART 03 / FROM CODE TO LAUNCH',title:'AI 写好了代码，然后呢？',subtitle:'AI工具从开发到上线全流程'}
 ];
