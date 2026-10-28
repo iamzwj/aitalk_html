@@ -340,3 +340,14 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 .presentation .evo-platform h2{font-size:clamp(38px,5.8vh,80px)}
 .presentation .evo-evidence h2{font-size:clamp(24px,3.15vh,43px)}
 @media(max-height:760px){.presentation .redesigned-slide h2{font-size:24px}.presentation .six-equal h2{font-size:30px}.presentation .evo-platform h2{font-size:38px}.presentation .evo-evidence h2{font-size:24px}}
+
+/* Chapter-colored MicroSlats on content pages; keep the cover video separate. */
+.content-background{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 80% 60%,color-mix(in srgb,var(--dp-color-accent) 12%,#020303),#020303 75%)}
+.content-background .micro-slats{opacity:.45}
+.presentation .content-wash{background:linear-gradient(90deg,#020303d9 0%,#020303ba 50%,#02030380 100%)}
+
+/* Product names lead the before/after comparison, at equal hierarchy. */
+.presentation .evo-evidence h2,.presentation .evo-platform h2{font-size:clamp(28px,4vh,54px);line-height:1.2;margin:0;letter-spacing:-.035em;white-space:nowrap}
+.evo-description{font-size:clamp(16px,2.2vh,30px);line-height:1.4;color:#b0c5b8;margin:clamp(8px,1.2vh,16px) 0 0}
+.evo-platform .evo-description{margin-bottom:auto}
+@media(max-height:760px){.presentation .evo-evidence h2,.presentation .evo-platform h2{font-size:28px}.evo-description{font-size:16px}}
