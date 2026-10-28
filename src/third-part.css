@@ -142,3 +142,15 @@
 .n-deployment-notes .n-panel{justify-content:center}
 .n-role h2{white-space:nowrap}
 @media(max-height:760px){.n-role{grid-template-columns:112px 1fr}}
+
+.n-hosted-benefits{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.7vh,24px) clamp(16px,1.4vw,28px);flex:1;align-content:center}
+.n-hosted-benefits section{display:flex;flex-direction:column;gap:6px}
+.presentation .content-page .n-hosted-benefits h3{font-size:var(--type-body);color:var(--lesson-accent);line-height:1.4}
+.presentation .content-page .n-hosted-benefits p{font-size:var(--type-label);line-height:1.6}
+.n-hosted-benefits code{font:inherit;color:var(--lesson-accent)}
+.n-cloudflare .n-route-columns{grid-template-columns:.85fr 1.45fr}
+.n-hosted-benefits{gap:clamp(6px,1vh,12px) 20px}
+.n-hosted-benefits section{gap:3px}
+.presentation .content-page .n-hosted-benefits p{font-size:var(--type-note);line-height:1.45}
+.n-hosted-route .n-route-path{padding-top:6px;gap:3px}
+.n-route-columns .n-hosted-route{gap:5px}

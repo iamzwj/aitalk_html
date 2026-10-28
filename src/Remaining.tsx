@@ -112,9 +112,14 @@ export function Remaining({page}:{page:number}){return <section className={`rede
   <div className="n-body n-cloudflare">
     <div className="n-route-columns">
       <Panel className="n-self-route"><h2>自主部署</h2><p>前面介绍的是自主服务器部署，<span className="n-inline-label">需要准备：</span></p><List items={['GitHub 代码库','云服务器','运行环境','域名与必要的备案','程序部署与维护']}/><div className="n-route-path"><span className="n-label">两条常见路线</span><Flow items={['GitHub','云服务器','自有域名','网站上线']}/></div></Panel>
-      <Panel accent className="n-hosted-route"><h2>Cloudflare 托管</h2><p>如果只是一个简单的网页工具呢？可以考虑使用 <strong>Cloudflare Pages</strong>。</p><span className="n-label">主要优势：</span><List items={['可以在免费额度内使用。','不需要自行购买独立云服务器。','可以直接使用平台提供的网址。','与 GitHub 集成方便。','GitHub 更新代码后，可以自动构建和部署网站。']}/><div className="n-route-path"><Flow items={['GitHub','Cloudflare Pages','平台网址','网站上线']}/></div></Panel>
+      <Panel accent className="n-hosted-route"><h2>Cloudflare 托管</h2><p>如果只是一个简单的网页工具呢？可以考虑使用 <strong>Cloudflare Pages</strong>。</p><span className="n-label">主要优势：</span><div className="n-hosted-benefits">{[
+['01','免费网址',<>自动分配 <code>项目名.pages.dev</code>，无需购买域名。</>],
+['02','免费网页托管','无需购买和配置独立云服务器，在免费额度内即可发布网站。'],
+['03','GitHub 一键关联','直接连接代码仓库，代码更新后自动构建、部署网站。'],
+['04','上线简单，维护省心','平台负责网页托管和基础 HTTPS 服务，无需自己管理传统服务器环境。']
+].map(([number,title,description])=><section key={String(number)}><h3>{number}｜{title}</h3><p>{description}</p></section>)}</div><div className="n-route-path"><span className="n-label">部署流程</span><Flow items={['GitHub','Cloudflare Pages','免费网址','网站上线']}/></div></Panel>
     </div>
-    <section className="n-scope"><span className="n-label">适用范围：</span><p>适合静态网站及兼容平台环境的轻量网页应用。复杂后端、特殊运行环境或长时间运行任务可能需要其他方案，中国大陆访问体验也应提前测试。</p></section>
+    <section className="n-scope"><span className="n-label">适用范围：</span><p>静态网站和轻量网页工具。复杂后端及中国大陆访问体验需要根据实际情况评估。</p></section>
   </div>
   <Point>不必一开始就购买服务器和域名，也可以先把自己的第一个网页工具发布出去。</Point>
 </>}
