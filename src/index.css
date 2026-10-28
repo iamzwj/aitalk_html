@@ -353,3 +353,15 @@ h1{position:relative;width:fit-content;font-family:var(--dp-typography-display);
 @media(max-height:760px){.presentation .evo-evidence h2,.presentation .evo-platform h2{font-size:28px}.evo-description{font-size:16px}}
 
 .hero-content .presenter{color:var(--dp-color-accent)}
+
+/* Closing slide: cover treatment, quiet QR codes on the left, video on the right. */
+.closing-page .backdrop,.closing-page .background-poster{left:43%;width:57%;object-position:65% center}
+.closing-page .wash{background:linear-gradient(90deg,#020303 0%,#020303 37%,#020303e0 48%,#02030330 72%,#02030328 100%)}
+.closing-page .closing-content{width:54%;max-width:none}
+.closing-page .closing-content .main-title{font-size:clamp(78px,7.4vw,150px);line-height:1.1;white-space:nowrap;margin-bottom:clamp(25px,4vh,50px)}
+.closing-qr-row{display:flex;gap:clamp(24px,2.5vw,48px);align-items:flex-start}
+.closing-qr-row figure{margin:0;text-align:center}
+.closing-qr-frame{padding:10px;border:1px solid var(--dp-color-accent);background:#07150d;box-shadow:0 0 24px #38ff8e08}
+.closing-qr-frame img{display:block;box-sizing:content-box;width:clamp(176px,20vh,220px);height:clamp(176px,20vh,220px);object-fit:contain;padding:12px;background:#fff}
+.closing-qr-row figcaption{font-size:clamp(18px,2.3vh,30px);line-height:1.4;color:var(--dp-color-accent);margin-top:16px;letter-spacing:.06em}
+.closing-page .backdrop,.closing-page .background-poster{-webkit-mask-image:linear-gradient(90deg,transparent,#000 24%);mask-image:linear-gradient(90deg,transparent,#000 24%)}
