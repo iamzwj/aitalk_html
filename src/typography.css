@@ -7,7 +7,7 @@
   --type-body:clamp(15px,min(1.15vw,2.05vh),24px);
   --type-lead:clamp(17px,min(1.46vw,2.6vh),30px);
   --type-label:clamp(13px,min(.94vw,1.67vh),20px);
-  --type-note:clamp(12px,min(.84vw,1.5vh),18px);
+  --type-note:calc(clamp(12px,min(.84vw,1.5vh),18px) - 1px);
   --type-product:clamp(28px,min(2.1vw,3.75vh),44px);
 }
 /* Primary and secondary headings. Never use oversized card titles as page titles. */
